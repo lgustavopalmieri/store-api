@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  store-api:
+    container_name: store-api
+    image: store-api
+    build: .
+    ports:
+      - 6000:6000
+    environment:
+      - MODE=dev
+    networks:
+      - store-api-net
+      - store-api-net-db
+    volumes:
+      - store-api:/app/node_modules
+      - .:/app
+
+networks:
+  store-api-net:
+    name: store-api-net
+  
+  store-api-net-db:
+    external:
+      name: store-api-net-db
+
+volumes:
+  store-api:
+    name: store-api
