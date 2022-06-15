@@ -1,5 +1,11 @@
 import { Transform } from 'class-transformer';
-import { MaxLength, IsString, IsNotEmpty, IsEmail } from 'class-validator';
+import {
+  MaxLength,
+  IsString,
+  IsNotEmpty,
+  IsEmail,
+  IsBoolean,
+} from 'class-validator';
 
 export class CreateUserDto {
   @MaxLength(100)
@@ -24,5 +30,6 @@ export class CreateUserDto {
   @IsNotEmpty()
   password: string;
 
+  @IsBoolean()
   admin: boolean;
 }

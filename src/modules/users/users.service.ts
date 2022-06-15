@@ -1,11 +1,15 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Not, Repository } from 'typeorm';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
 import * as bcrypt from 'bcrypt';
-import { UpdateUserPasswordDto } from './dto/update-user-password.dto';
+import { UserDto } from './dto/user.dto';
 
 @Injectable()
 export class UsersService {
@@ -14,6 +18,24 @@ export class UsersService {
     private readonly userRepository: Repository<User>,
   ) {}
   async create(createUserDto: CreateUserDto) {
+    const dataAlreadyExists = await this.userRepository.find({
+      where: {
+        ...(createUserDto.email ? { email: createUserDto.email } : {}),
+        ...(createUserDto.cpf ? { cpf: createUserDto.cpf } : {}),
+      },
+      withDeleted: true,
+    });
+
+    if (dataAlreadyExists.length > 0) {
+      throw new BadRequestException({
+        error: 'Duplicated User params.',
+        message:
+          createUserDto.cpf || createUserDto.email
+            ? `User with ${createUserDto.cpf} or ${createUserDto.email} already exists.`
+            : 'Something went wrong. Try again later.',
+      });
+    }
+
     const cryptPass = bcrypt.hashSync(createUserDto.password, 8);
     const user = this.userRepository.create({
       ...createUserDto,
@@ -24,11 +46,15 @@ export class UsersService {
     return this.userRepository.save(user);
   }
 
-  async findAll() {
-    const allUsers = this.userRepository.find({
+  async findAll(query: UserDto) {
+    const where = {
+      ...(query.name ? { name: query.name } : {}),
+      ...(query.email ? { email: query.email } : {}),
+    };
+    return this.userRepository.find({
+      where,
       withDeleted: true,
     });
-    return allUsers;
   }
 
   async findOne(id: number) {
@@ -40,21 +66,31 @@ export class UsersService {
         message: `User ${id} not found.`,
       });
     }
+
     return oneUser;
   }
 
-  async findOneForLogin(email: string) {
-    const findOneUserName = await this.userRepository.findOne({ email: email });
-    if (!findOneUserName) {
-      throw new NotFoundException({
-        error: 'Not found.',
-        message: `Email ${email} not found.`,
-      });
-    }
-    return findOneUserName;
-  }
-
   async update(id: number, updateUserDto: UpdateUserDto) {
+    if (updateUserDto.email || updateUserDto.cpf) {
+      const userParamsExists = await this.userRepository.find({
+        withDeleted: true,
+        where: {
+          cpf: updateUserDto.cpf,
+          email: updateUserDto.email,
+          id: Not(id),
+        },
+      });
+
+      if (userParamsExists.length > 0) {
+        throw new BadRequestException({
+          error: 'Duplicated User params.',
+          message:
+            updateUserDto.cpf || updateUserDto.email
+              ? `User with ${updateUserDto.cpf} or ${updateUserDto.email} already exists.`
+              : 'Something went wrong. Try again later.',
+        });
+      }
+    }
     const userFound = await this.findOne(id);
 
     return this.userRepository.save({
@@ -63,43 +99,6 @@ export class UsersService {
       updatedAt: new Date(),
     });
   }
-
-  // async updatePassword(
-  //   email: string,
-  //   updateUserPasswordDto: UpdateUserPasswordDto,
-  // ): Promise<User> {
-  //   const findEmail = await this.userRepository.findOne({
-  //     where: {
-  //       email: email,
-  //     },
-  //   });
-
-  //   if (findEmail) {
-  //     if (findEmail.password === updateUserPasswordDto.password) {
-  //       if (
-  //         updateUserPasswordDto.newPassword !=
-  //         updateUserPasswordDto.confirmNewPassword
-  //       ) {
-  //         throw new NotFoundException({
-  //           error: 'Not found.',
-  //           message: `${findEmail.password} not matches.`,
-  //         });
-  //       }
-  //     }
-
-  //     const passwordUpdate = this.userRepository.save({
-  //       ...findEmail,
-  //       ...updateUserPasswordDto,
-  //       updatedAt: new Date(),
-  //     });
-
-  //     return passwordUpdate;
-  //   }
-
-  //   // const updatedPassword = this.userRepository.save({
-  //   //   ...pass
-  //   // })
-  // }
 
   async remove(id: number) {
     const userFound = await this.findOne(id);

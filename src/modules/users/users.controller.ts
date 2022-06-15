@@ -10,12 +10,14 @@ import {
   HttpStatus,
   Put,
   ValidationPipe,
+  Query,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import validationPipeOptions from 'src/constants/validation-pipe.constant';
-import { UpdateUserPasswordDto } from './dto/update-user-password.dto';
+import { Serialize } from 'src/interceptors/serialiaze.interceptor';
+import { UserDto } from './dto/user.dto';
 
 @Controller('users')
 export class UsersController {
@@ -30,11 +32,12 @@ export class UsersController {
   }
 
   @Get()
-  findAll() {
-    return this.usersService.findAll();
+  findAll(@Query() query: UserDto) {
+    return this.usersService.findAll(query);
   }
 
   @Get(':id')
+  @Serialize(UserDto)
   findOne(@Param('id') id: string) {
     return this.usersService.findOne(+id);
   }
@@ -43,14 +46,6 @@ export class UsersController {
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.usersService.update(+id, updateUserDto);
   }
-
-  // @Put(':id')
-  // updatePassword(
-  //   @Param('id') email: string,
-  //   @Body() updateUserPasswordDto: UpdateUserPasswordDto,
-  // ) {
-  //   return this.usersService.updatePassword(email, updateUserPasswordDto);
-  // }
 
   @HttpCode(HttpStatus.NO_CONTENT)
   @Delete(':id')
