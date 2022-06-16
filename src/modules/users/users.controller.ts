@@ -18,10 +18,24 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import validationPipeOptions from 'src/constants/validation-pipe.constant';
 import { Serialize } from 'src/interceptors/serialiaze.interceptor';
 import { UserDto } from './dto/user.dto';
+import { AuthService } from './auth.service';
 
-@Controller('users')
+@Controller('auth')
 export class UsersController {
-  constructor(private readonly usersService: UsersService) {}
+  constructor(
+    private readonly usersService: UsersService,
+    private authService: AuthService,
+  ) {}
+
+  @Post('/signup')
+  signinUpCreate(@Body() createUserDto: CreateUserDto) {
+    return this.authService.signup(createUserDto);
+  }
+
+  @Post('/signin')
+  signin(@Body() createUserDto: CreateUserDto) {
+    return this.authService.signin(createUserDto);
+  }
 
   @Post()
   create(
@@ -34,6 +48,11 @@ export class UsersController {
   @Get()
   findAll(@Query() query: UserDto) {
     return this.usersService.findAll(query);
+  }
+
+  @Get('email')
+  findForAuth(@Query('email') email: string) {
+    return this.usersService.findForAuth(email);
   }
 
   @Get(':id')

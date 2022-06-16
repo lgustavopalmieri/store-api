@@ -21,6 +21,8 @@ export class User {
   })
   name: string;
 
+  //será preciso dividir os dados do usuário do email e senha
+
   @Column({
     type: 'varchar',
     length: 11,

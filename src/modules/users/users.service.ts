@@ -46,6 +46,17 @@ export class UsersService {
     return this.userRepository.save(user);
   }
 
+  signinUpCreate(createUserDto: CreateUserDto) {
+    const user = this.userRepository.create({
+      ...createUserDto,
+      password: createUserDto.password,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    });
+
+    return this.userRepository.save(user);
+  }
+
   async findAll(query: UserDto) {
     const where = {
       ...(query.name ? { name: query.name } : {}),
@@ -54,6 +65,15 @@ export class UsersService {
     return this.userRepository.find({
       where,
       withDeleted: true,
+    });
+  }
+
+  findForAuth(email: string) {
+    return this.userRepository.find({
+      email,
+      // where: {
+      //   ...(email ? { email: email } : {}),
+      // },
     });
   }
 
