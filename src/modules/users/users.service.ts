@@ -17,34 +17,34 @@ export class UsersService {
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
   ) {}
-  async create(createUserDto: CreateUserDto) {
-    const dataAlreadyExists = await this.userRepository.find({
-      where: {
-        ...(createUserDto.email ? { email: createUserDto.email } : {}),
-        ...(createUserDto.cpf ? { cpf: createUserDto.cpf } : {}),
-      },
-      withDeleted: true,
-    });
+  // async create(createUserDto: CreateUserDto) {
+  //   const dataAlreadyExists = await this.userRepository.find({
+  //     where: {
+  //       ...(createUserDto.email ? { email: createUserDto.email } : {}),
+  //       ...(createUserDto.cpf ? { cpf: createUserDto.cpf } : {}),
+  //     },
+  //     withDeleted: true,
+  //   });
 
-    if (dataAlreadyExists.length > 0) {
-      throw new BadRequestException({
-        error: 'Duplicated User params.',
-        message:
-          createUserDto.cpf || createUserDto.email
-            ? `User with ${createUserDto.cpf} or ${createUserDto.email} already exists.`
-            : 'Something went wrong. Try again later.',
-      });
-    }
+  //   if (dataAlreadyExists.length > 0) {
+  //     throw new BadRequestException({
+  //       error: 'Duplicated User params.',
+  //       message:
+  //         createUserDto.cpf || createUserDto.email
+  //           ? `User with ${createUserDto.cpf} or ${createUserDto.email} already exists.`
+  //           : 'Something went wrong. Try again later.',
+  //     });
+  //   }
 
-    const cryptPass = bcrypt.hashSync(createUserDto.password, 8);
-    const user = this.userRepository.create({
-      ...createUserDto,
-      password: cryptPass,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    });
-    return this.userRepository.save(user);
-  }
+  //   const cryptPass = bcrypt.hashSync(createUserDto.password, 8);
+  //   const user = this.userRepository.create({
+  //     ...createUserDto,
+  //     password: cryptPass,
+  //     createdAt: new Date(),
+  //     updatedAt: new Date(),
+  //   });
+  //   return this.userRepository.save(user);
+  // }
 
   signinUpCreate(createUserDto: CreateUserDto) {
     const user = this.userRepository.create({
@@ -71,14 +71,20 @@ export class UsersService {
   findForAuth(email: string) {
     return this.userRepository.find({
       email,
-      // where: {
-      //   ...(email ? { email: email } : {}),
-      // },
     });
   }
 
+  async findOneForLogout(id: number) {
+    if (!id) {
+      return null;
+    }
+    return this.userRepository.findOne(id);
+  }
+
   async findOne(id: number) {
-    const oneUser = await this.userRepository.findOne(id);
+    const oneUser = await this.userRepository.findOne(id, {
+      withDeleted: true,
+    });
 
     if (!oneUser) {
       throw new NotFoundException({

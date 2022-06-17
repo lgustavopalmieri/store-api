@@ -1,16 +1,18 @@
 import { Expose, Exclude } from 'class-transformer';
-import { IsEmail, IsString, IsOptional } from 'class-validator';
+import { IsEmail, IsString, IsOptional, IsNumber } from 'class-validator';
 
 export class UserDto {
   @Expose()
+  @IsNumber()
+  id: number;
+
+  @Expose()
   @IsEmail()
   @IsString()
-  @IsOptional()
   name: string;
 
   @Expose()
   @IsEmail()
   @IsString()
-  @IsOptional()
   email: string;
 }
