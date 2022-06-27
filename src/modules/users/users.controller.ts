@@ -9,7 +9,6 @@ import {
   HttpCode,
   HttpStatus,
   Put,
-  ValidationPipe,
   Query,
   Session,
   UseGuards,

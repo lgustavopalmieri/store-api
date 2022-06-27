@@ -1,8 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './modules/users/users.module';
-import { SalesModule } from './modules/sales/sales.module';
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -21,7 +19,6 @@ import { SalesModule } from './modules/sales/sales.module';
       },
     }),
     UsersModule,
-    SalesModule,
   ],
   controllers: [],
   providers: [],

@@ -1,10 +1,8 @@
-import { Sale } from 'src/modules/sales/entities/sale.entity';
 import {
   Column,
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
-  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -48,11 +46,6 @@ export class User {
     default: 'false',
   })
   admin: boolean;
-
-  @OneToMany(() => Sale, (sale) => sale.user, {
-    nullable: true,
-  })
-  sales: Sale[];
 
   @CreateDateColumn({ nullable: false })
   createdAt: Date;
