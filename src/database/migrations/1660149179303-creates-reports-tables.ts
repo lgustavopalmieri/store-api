@@ -5,11 +5,11 @@ import {
   TableForeignKey,
 } from 'typeorm';
 
-export class salesTable1653856752892 implements MigrationInterface {
+export class createsReportsTables1660149179303 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'sales',
+        name: 'reports',
         columns: [
           {
             name: 'id',
@@ -19,26 +19,39 @@ export class salesTable1653856752892 implements MigrationInterface {
             generationStrategy: 'increment',
           },
           {
-            name: 'title',
+            name: 'approved',
+            type: 'boolean',
+            default: false,
+            isNullable: false,
+          },
+          {
+            name: 'make',
             type: 'varchar',
             isNullable: false,
           },
           {
-            name: 'description',
-            type: 'text',
+            name: 'model',
+            type: 'varchar',
             isNullable: false,
           },
           {
-            name: 'price',
-            type: 'decimal',
-            precision: 10,
-            scale: 2,
+            name: 'year',
+            type: 'integer',
             isNullable: false,
           },
           {
-            name: 'approved',
-            type: 'boolean',
-            default: false,
+            name: 'lng',
+            type: 'integer',
+            isNullable: false,
+          },
+          {
+            name: 'lat',
+            type: 'integer',
+            isNullable: false,
+          },
+          {
+            name: 'mileage',
+            type: 'integer',
             isNullable: false,
           },
           {
@@ -64,20 +77,17 @@ export class salesTable1653856752892 implements MigrationInterface {
         ],
       }),
     );
-
     await queryRunner.createForeignKey(
-      'sales',
+      'reports',
       new TableForeignKey({
         columnNames: ['userId'],
         referencedColumnNames: ['id'],
         referencedTableName: 'users',
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
       }),
     );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('sales');
+    await queryRunner.dropTable('reports');
   }
 }

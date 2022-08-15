@@ -12,17 +12,17 @@ import {
   Query,
   Session,
   UseGuards,
+  ValidationPipe,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import validationPipeOptions from 'src/constants/validation-pipe.constant';
-import { Serialize } from 'src/interceptors/serialiaze.interceptor';
+import { Serialize } from '../../interceptors/serialiaze.interceptor';
 import { UserDto } from './dto/user.dto';
 import { AuthService } from './auth.service';
 import { CurrentUser } from './decorators/current-user.decoratos';
 import { User } from './entities/user.entity';
-import { AuthGuard } from 'src/guards/auth.guard';
+import { AuthGuard } from '../../guards/auth.guard';
 
 @Controller('auth')
 @Serialize(UserDto)
@@ -60,18 +60,15 @@ export class UsersController {
     return user;
   }
 
-  // @Post()
-  // @UseGuards(AuthGuard)
-  // create(
-  //   @Body(new ValidationPipe(validationPipeOptions))
-  //   createUserDto: CreateUserDto,
-  // ) {
-  //   return this.usersService.create(createUserDto);
-  // }
+  @Get('emailList')
+  findEmails() {
+    return this.usersService.findEmails();
+  }
 
   @Get()
   @UseGuards(AuthGuard)
   findAll(@Query() query: UserDto) {
+    console.log(query);
     return this.usersService.findAll(query);
   }
 

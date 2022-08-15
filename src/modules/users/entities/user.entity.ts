@@ -3,9 +3,11 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { Report } from 'src/modules/reports/entities/report.entity';
 
 @Entity({ name: 'users' })
 export class User {
@@ -43,9 +45,15 @@ export class User {
 
   @Column({
     type: 'boolean',
-    default: 'false',
+    default: 'true',
   })
   admin: boolean;
+
+  @OneToMany(() => Report, (report) => report.user, {
+    eager: true,
+    cascade: true,
+  })
+  reports: Report[];
 
   @CreateDateColumn({ nullable: false })
   createdAt: Date;

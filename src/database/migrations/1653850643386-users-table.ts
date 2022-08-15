@@ -38,7 +38,7 @@ export class usersTable1653850643386 implements MigrationInterface {
           {
             name: 'admin',
             type: 'boolean',
-            default: false,
+            default: true,
             isNullable: false,
           },
           {
