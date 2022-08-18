@@ -7,7 +7,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Report } from 'src/modules/reports/entities/report.entity';
+import { Report } from '../../../../src/modules/reports/entities/report.entity';
 
 @Entity({ name: 'users' })
 export class User {
