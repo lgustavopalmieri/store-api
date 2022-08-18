@@ -13,7 +13,7 @@
     "start:dev": "cross-env NODE_ENV=localhost nest start --watch",
     "prestart": "npm run build",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "cross-env NODE_ENV=localhost node dust/src/main",
+    "start:prod": "cross-env NODE_ENV=localhost node dist/src/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix && prettier --write \"src/**/*.ts\"",
     "lint:check": "eslint \"{src,apps,libs,test}/**/*.ts\" && prettier --check \"src/**/*.ts\"",
     "test": "jest",
