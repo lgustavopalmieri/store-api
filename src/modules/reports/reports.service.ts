@@ -6,6 +6,7 @@ import { CreateReportDto } from './dto/create-report.dto';
 import { UpdateReportDto } from './dto/update-report.dto';
 import { Report } from './entities/report.entity';
 import { GetStimateDto } from './dto/get-estimate.dto';
+import { TestDto } from './dto/test.dto';
 
 @Injectable()
 export class ReportsService {
@@ -24,9 +25,10 @@ export class ReportsService {
       .getRawMany();
   }
 
-  async create(createReportDto: CreateReportDto, user: User) {
+  async create(createReportDto: CreateReportDto, user: User, teste: TestDto) {
     const report = this.repository.create({
       ...createReportDto,
+      test: createReportDto.test,
       createdAt: new Date(),
       updatedAt: new Date(),
     });

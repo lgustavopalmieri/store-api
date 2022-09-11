@@ -20,6 +20,7 @@ import { ReportDto } from './dto/report.dto';
 import { ApproveReportDto } from './dto/approve-report.dto';
 import { AdminGuard } from 'src/guards/admin.guard';
 import { GetStimateDto } from './dto/get-estimate.dto';
+import { TestDto } from './dto/test.dto';
 
 @Controller('reports')
 export class ReportsController {
@@ -28,8 +29,12 @@ export class ReportsController {
   @Post()
   @UseGuards(AuthGuard)
   @Serialize(ReportDto)
-  create(@Body() createReportDto: CreateReportDto, @CurrentUser() user: User) {
-    return this.reportsService.create(createReportDto, user);
+  create(
+    @Body() createReportDto: CreateReportDto,
+    @CurrentUser() user: User,
+    teste: TestDto,
+  ) {
+    return this.reportsService.create(createReportDto, user, teste);
   }
 
   @Patch(':id')

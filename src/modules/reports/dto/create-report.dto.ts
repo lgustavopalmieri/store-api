@@ -6,6 +6,7 @@ import {
   IsLongitude,
   IsLatitude,
 } from 'class-validator';
+import { TestDto } from './test.dto';
 
 export class CreateReportDto {
   @IsString()
@@ -34,4 +35,6 @@ export class CreateReportDto {
   @Min(0)
   @Max(1000000)
   price: number;
+
+  test: TestDto;
 }
