@@ -60,11 +60,6 @@ export class createsReportsTables1660149179303 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: 'test',
-            type: 'string',
-            isNullable: true,
-          },
-          {
             name: 'createdAt',
             type: 'timestamp',
             isNullable: false,

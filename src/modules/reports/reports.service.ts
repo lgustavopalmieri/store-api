@@ -28,7 +28,6 @@ export class ReportsService {
   async create(createReportDto: CreateReportDto, user: User, teste: TestDto) {
     const report = this.repository.create({
       ...createReportDto,
-      test: createReportDto.test,
       createdAt: new Date(),
       updatedAt: new Date(),
     });

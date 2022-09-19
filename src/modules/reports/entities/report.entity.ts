@@ -36,9 +36,6 @@ export class Report {
   @Column()
   mileage: number;
 
-  @Column()
-  test: object;
-
   @ManyToOne(() => User, (user) => user.reports)
   @JoinColumn({ name: 'userId' })
   user: User;
