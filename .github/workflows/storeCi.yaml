@@ -12,22 +12,13 @@ jobs:
         node: [ 16 ]
 
     steps:
-      - name: Copy repository
-        uses: actions/checkout@v2
-
-      - name: Install npm dependencies
-        run: npm ci
-      
-      - name: Lint code
-        run: npm run lint
+      - uses: actions/checkout@v3
 
       - name: Use Node.js ${{ matrix.node }}
-      - uses: actions/setup-node@v1 
+        uses: actions/setup-node@v3 
         with:
           node-version: ${{ matrix.node }}
-      - run: npm run test
-          node-version: ${{ matrix.node }}
-
+        run: npm test
 
 
       - name: SonarCloud Scan
@@ -55,5 +46,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: lgustavopalmieri/ci-cd-nest:latest
+          tags: lgustavopalmieri/nest:latest
           #lets see that ...
