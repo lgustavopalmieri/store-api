@@ -23,7 +23,7 @@ jobs:
         run: npm ci -f
       
       - run: npm ci -f
-      - run: npm ci -f -g sonarqube-scanner
+      - run: npm ci -f sonarqube-scanner
       - run: npm run lint
       - run: |
           npm run test:cov
