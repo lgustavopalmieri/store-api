@@ -1,8 +1,10 @@
 name: storeCi
 on:
-  pull_request:
+  push:
     branches:
       - master
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
   check-application:
@@ -22,7 +24,6 @@ jobs:
 
       - name: Tests
         run: npm test  
-
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
