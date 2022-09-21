@@ -21,13 +21,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci -f
-      
-      - run: npm install
-      - run: npm install -g sonarqube-scanner
-      - run: npm run lint
-      - run: |
-          npm run test:cov
-          sonar-scanner -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
       - name: Tests
         run: npm test  
