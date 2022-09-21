@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1663773614230" clover="3.2.0">
-  <project timestamp="1663773614231" name="All files">
-    <metrics statements="363" coveredstatements="149" conditionals="28" coveredconditionals="9" methods="72" coveredmethods="14" elements="463" coveredelements="172" complexity="0" loc="363" ncloc="363" packages="16" files="32" classes="32"/>
+<coverage generated="1663779724400" clover="3.2.0">
+  <project timestamp="1663779724401" name="All files">
+    <metrics statements="356" coveredstatements="144" conditionals="28" coveredconditionals="9" methods="72" coveredmethods="14" elements="456" coveredelements="167" complexity="0" loc="356" ncloc="356" packages="16" files="32" classes="32"/>
     <package name="src">
       <metrics statements="18" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="app.module.ts" path="/home/lgustavopalmieri/Documents/store-api/src/app.module.ts">
@@ -121,7 +121,7 @@
       </file>
     </package>
     <package name="src.modules.reports">
-      <metrics statements="56" coveredstatements="5" conditionals="1" coveredconditionals="0" methods="16" coveredmethods="0"/>
+      <metrics statements="56" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="16" coveredmethods="0"/>
       <file name="reports.controller.ts" path="/home/lgustavopalmieri/Documents/store-api/src/modules/reports/reports.controller.ts">
         <metrics statements="29" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
@@ -139,19 +139,19 @@
         <line num="23" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
         <line num="61" count="0" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
         <line num="66" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
         <line num="71" count="0" type="stmt"/>
       </file>
       <file name="reports.module.ts" path="/home/lgustavopalmieri/Documents/store-api/src/modules/reports/reports.module.ts">
@@ -166,12 +166,12 @@
         <line num="15" count="0" type="stmt"/>
       </file>
       <file name="reports.service.ts" path="/home/lgustavopalmieri/Documents/store-api/src/modules/reports/reports.service.ts">
-        <metrics statements="19" coveredstatements="5" conditionals="1" coveredconditionals="0" methods="8" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
+        <metrics statements="19" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
@@ -189,62 +189,57 @@
       </file>
     </package>
     <package name="src.modules.reports.dto">
-      <metrics statements="44" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <metrics statements="39" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
       <file name="approve-report.dto.ts" path="/home/lgustavopalmieri/Documents/store-api/src/modules/reports/dto/approve-report.dto.ts">
         <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
       </file>
       <file name="create-report.dto.ts" path="/home/lgustavopalmieri/Documents/store-api/src/modules/reports/dto/create-report.dto.ts">
         <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
       </file>
       <file name="get-estimate.dto.ts" path="/home/lgustavopalmieri/Documents/store-api/src/modules/reports/dto/get-estimate.dto.ts">
-        <metrics statements="13" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
       </file>
       <file name="report.dto.ts" path="/home/lgustavopalmieri/Documents/store-api/src/modules/reports/dto/report.dto.ts">
-        <metrics statements="12" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="11" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
       </file>
       <file name="test.dto.ts" path="/home/lgustavopalmieri/Documents/store-api/src/modules/reports/dto/test.dto.ts">
         <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
       </file>
       <file name="update-report.dto.ts" path="/home/lgustavopalmieri/Documents/store-api/src/modules/reports/dto/update-report.dto.ts">
         <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -254,25 +249,24 @@
       </file>
     </package>
     <package name="src.modules.reports.entities">
-      <metrics statements="16" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="report.entity.ts" path="/home/lgustavopalmieri/Documents/store-api/src/modules/reports/entities/report.entity.ts">
-        <metrics statements="16" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
-        <line num="19" count="4" type="stmt"/>
-        <line num="22" count="4" type="stmt"/>
-        <line num="25" count="4" type="stmt"/>
-        <line num="28" count="4" type="stmt"/>
-        <line num="31" count="4" type="stmt"/>
-        <line num="34" count="4" type="stmt"/>
-        <line num="37" count="4" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="41" count="4" type="stmt"/>
-        <line num="44" count="4" type="stmt"/>
-        <line num="47" count="4" type="stmt"/>
-        <line num="50" count="4" type="stmt"/>
+        <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="39" count="3" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
+        <line num="46" count="3" type="stmt"/>
+        <line num="49" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.modules.users">
@@ -318,9 +312,9 @@
         <line num="29" count="1" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
         <line num="48" count="1" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
@@ -330,20 +324,20 @@
         <line num="58" count="0" type="stmt"/>
         <line num="59" count="0" type="stmt"/>
         <line num="60" count="0" type="stmt"/>
-        <line num="64" count="1" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
         <line num="65" count="0" type="stmt"/>
-        <line num="70" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
         <line num="71" count="0" type="stmt"/>
         <line num="72" count="0" type="stmt"/>
-        <line num="76" count="1" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
         <line num="77" count="0" type="stmt"/>
-        <line num="82" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
         <line num="83" count="0" type="stmt"/>
-        <line num="88" count="1" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
         <line num="89" count="0" type="stmt"/>
-        <line num="95" count="1" type="stmt"/>
+        <line num="92" count="1" type="stmt"/>
         <line num="96" count="0" type="stmt"/>
-        <line num="102" count="1" type="stmt"/>
+        <line num="99" count="1" type="stmt"/>
         <line num="103" count="0" type="stmt"/>
       </file>
       <file name="users.module.ts" path="/home/lgustavopalmieri/Documents/store-api/src/modules/users/users.module.ts">
@@ -429,18 +423,18 @@
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
       </file>
       <file name="signin.dto.ts" path="/home/lgustavopalmieri/Documents/store-api/src/modules/users/dto/signin.dto.ts">
         <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
       </file>
       <file name="update-user.dto.ts" path="/home/lgustavopalmieri/Documents/store-api/src/modules/users/dto/update-user.dto.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -453,29 +447,28 @@
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.modules.users.entities">
-      <metrics statements="14" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="user.entity.ts" path="/home/lgustavopalmieri/Documents/store-api/src/modules/users/entities/user.entity.ts">
-        <metrics statements="14" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
-        <line num="22" count="4" type="stmt"/>
-        <line num="31" count="4" type="stmt"/>
-        <line num="38" count="4" type="stmt"/>
-        <line num="44" count="4" type="stmt"/>
-        <line num="50" count="4" type="stmt"/>
-        <line num="52" count="0" type="stmt"/>
-        <line num="56" count="4" type="stmt"/>
-        <line num="59" count="4" type="stmt"/>
-        <line num="62" count="4" type="stmt"/>
-        <line num="65" count="4" type="stmt"/>
+        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
+        <line num="46" count="3" type="stmt"/>
+        <line num="52" count="3" type="stmt"/>
+        <line num="58" count="3" type="stmt"/>
+        <line num="61" count="3" type="stmt"/>
+        <line num="64" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.modules.users.interceptors">

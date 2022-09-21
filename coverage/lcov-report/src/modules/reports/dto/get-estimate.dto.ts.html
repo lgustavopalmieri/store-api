@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
@@ -111,31 +111,31 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import {</span>
   IsString,
@@ -148,31 +148,31 @@
 <span class="cstat-no" title="statement not covered" >import { Transform } from 'class-transformer';</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >export class G</span>etStimateDto {
-  @IsString()
-<span class="cstat-no" title="statement not covered" >  make: string;</span>
+<span class="cstat-no" title="statement not covered" >  @IsString()</span>
+  make: string;
 &nbsp;
-  @IsString()
-<span class="cstat-no" title="statement not covered" >  model: string;</span>
+<span class="cstat-no" title="statement not covered" >  @IsString()</span>
+  model: string;
 &nbsp;
-  @Transform(<span class="fstat-no" title="function not covered" >({</span> value }) =&gt; <span class="cstat-no" title="statement not covered" >parseInt(value))</span>
+<span class="cstat-no" title="statement not covered" >  @Transform(<span class="fstat-no" title="function not covered" >({</span> value }) =&gt; <span class="cstat-no" title="statement not covered" >parseInt(value))</span></span>
   @IsNumber()
   @Min(1930)
   @Max(2050)
-<span class="cstat-no" title="statement not covered" >  year: number;</span>
+  year: number;
 &nbsp;
-  @Transform(<span class="fstat-no" title="function not covered" >({</span> value }) =&gt; <span class="cstat-no" title="statement not covered" >parseInt(value))</span>
+<span class="cstat-no" title="statement not covered" >  @Transform(<span class="fstat-no" title="function not covered" >({</span> value }) =&gt; <span class="cstat-no" title="statement not covered" >parseInt(value))</span></span>
   @IsNumber()
   @Min(0)
   @Max(1000000)
-<span class="cstat-no" title="statement not covered" >  mileage: number;</span>
+  mileage: number;
 &nbsp;
-  @Transform(<span class="fstat-no" title="function not covered" >({</span> value }) =&gt; <span class="cstat-no" title="statement not covered" >parseFloat(value))</span>
+<span class="cstat-no" title="statement not covered" >  @Transform(<span class="fstat-no" title="function not covered" >({</span> value }) =&gt; <span class="cstat-no" title="statement not covered" >parseFloat(value))</span></span>
   @IsLongitude()
-<span class="cstat-no" title="statement not covered" >  lng: number;</span>
+  lng: number;
 &nbsp;
-  @Transform(<span class="fstat-no" title="function not covered" >({</span> value }) =&gt; <span class="cstat-no" title="statement not covered" >parseFloat(value))</span>
+<span class="cstat-no" title="statement not covered" >  @Transform(<span class="fstat-no" title="function not covered" >({</span> value }) =&gt; <span class="cstat-no" title="statement not covered" >parseFloat(value))</span></span>
   @IsLatitude()
-<span class="cstat-no" title="statement not covered" >  lat: number;</span>
+  lat: number;
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -181,7 +181,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-09-21T15:20:14.161Z
+                at 2022-09-21T17:02:04.352Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
