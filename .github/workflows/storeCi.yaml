@@ -24,13 +24,13 @@ jobs:
         run: npm ci -f
       
       - run: npm ci -f
-      - run: npm ci -f sonarqube-scanner
       - run: npm run lint
       - run: |
           npm run test:cov
 
       - name: Tests
         run: npm test  
+      - run: npm ci -f sonarqube-scanner
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
