@@ -44,6 +44,8 @@ jobs:
         uses: sonarsource/sonarqube-quality-gate-action@master
         # Force to fail step after specific time.
         timeout-minutes: 5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       # - name: Set up QEMU
       #   uses: docker/setup-qemu-action@v1
