@@ -4,8 +4,7 @@ on:
     branches:
       - master
   pull_request:
-    branches:
-      - master
+    types: [opened, synchronize, reopened]
 
 jobs:
   check-application:
@@ -22,12 +21,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci -f
-      
-      - run: npm ci -f
-      - run: npm ci -f sonarqube-scanner
-      - run: npm run lint
-      - run: |
-          npm run test:cov
 
       - name: Tests
         run: npm test  

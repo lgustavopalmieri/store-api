@@ -1,24 +1,15 @@
 sonar.projectKey=lgustavopalmieri_store-api
 sonar.organization=lgustavopalmieri-ci
-sonar.projectName=store-api
-
-
 sonar.sourceEncoding=UTF-8
 sonar.sources=src
-#sonar.exclusions=./src/**/*.spec.ts, src/*.ts
+sonar.exclusions=./src/**/*.spec.ts, src/*.ts
 
 sonar.inclusions=src/**/*.ts ##added later
 
-sonar.language=typescript
-
-sonar.host.url=https://sonarcloud.io
-
 sonar.tests=src
 sonar.test.inclusions=src/**/*.spec.ts
-#sonar.javascript.coveragePlugin=lcov
-
-sonar.typescript.lcov.reportPaths=./coverage/lcov.info
-sonar.typescript.tsconfigPath=tsconfig.json
+sonar.javascript.coveragePlugin=lcov
+sonar.javascript.lcov.reportPaths=./coverage/lcov.info
 
 
 
