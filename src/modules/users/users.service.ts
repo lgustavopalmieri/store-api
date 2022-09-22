@@ -174,3 +174,33 @@ export class UsersService {
     return this.userRepository.restore(userFound);
   }
 }
+
+
+
+
+
+
+
+
+
+
+  async remove2(id: number) {
+    const userFound = await this.findOne(id);
+    return this.userRepository.softDelete(userFound);
+  }
+
+  async delete2(id: number) {
+    const userFound = await this.findOne(id);
+    const deleted = await this.userRepository.delete(userFound);
+    if (deleted) {
+      return true;
+    }
+    return false;
+  }
+
+  async restore2(id: number) {
+    const userFound = await this.findOne(id);
+    return this.userRepository.restore(userFound);
+  }
+}
+
